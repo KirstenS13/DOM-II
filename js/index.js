@@ -69,9 +69,6 @@ body.addEventListener('keydown', (event) => {
 })
 
 //Event 6..................
-//mouseup
-
-//Event 7..................
 //mousemove
 //selecting navbar
 const navbar = document.querySelector('.nav-container');
@@ -82,9 +79,23 @@ navbar.addEventListener('mousemove', (event) => {
     event.target.parentElement.style.backgroundColor = 'lightcyan';
 })
 
+//Event 7..................
+//mouseover
+//selecting content sections
+const contentTexts = document.querySelectorAll('.text-content');
+//makeing sure correct elements were selected
+console.log(contentTexts);
+contentTexts.forEach((textEl) => {
+    textEl.addEventListener('mouseover', (event) => {
+        event.target.style.transform = 'rotate(360deg)';
+        event.target.style.transition = 'transform 1s';
+    })
+})
+
+
 //Event 8..................
 
-//scroll
+//
 
 //Event 9..................
 
