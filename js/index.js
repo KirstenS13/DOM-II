@@ -123,6 +123,7 @@ contentTitles.forEach((titleEl) => {
 //underline on mouseup and stop propagation
 contentTitles.forEach((titleEl) => {
     titleEl.addEventListener('mouseup', (event) => {
+        //STOP PROPAGATION
         event.stopPropagation();
         if (event.target.style.textDecoration === 'underline') {
             event.target.style.textDecoration = 'none';
@@ -133,4 +134,10 @@ contentTitles.forEach((titleEl) => {
 })
 
 //Event 10.................
-//
+//mousemove
+//select entire nav section
+const mainNav = document.querySelector('.main-navigation');
+//make nav section opaque when mouse moves over it
+mainNav.addEventListener('mousemove', (event) => {
+    event.target.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+})
