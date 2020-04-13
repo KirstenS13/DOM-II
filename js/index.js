@@ -10,6 +10,7 @@ navLinks.forEach((navLinkEl) => {
 })
 
 //Event 1..................
+//mouseenter
 //Select buttons
 const buttons = document.querySelectorAll('.btn');
 //enlarge buttons when mouse enters
@@ -21,6 +22,7 @@ buttons.forEach((btnEl) => {
 })
 
 //Event 2..................
+//mouseleave
 //reduce buttons when mouse leaves
 buttons.forEach((btnEl) => {
     btnEl.addEventListener('mouseleave', (event) => {
@@ -29,6 +31,7 @@ buttons.forEach((btnEl) => {
 })
 
 //Event 3..................
+//click
 //change the text color of the parent element when button is clicked
 buttons.forEach((btnEl) => {
     btnEl.addEventListener('click', (event) => {
@@ -37,6 +40,7 @@ buttons.forEach((btnEl) => {
 })
 
 //Event 4..................
+//dblclick
 //selecting top image
 const topImg = document.querySelector('.intro img');
 //checking that correct element was selected
@@ -47,17 +51,30 @@ topImg.addEventListener('dblclick', (event) => {
         event.target.style.borderRadius = '0px'
     } else {
         event.target.style.borderRadius = '100px';
-    event.target.style.transition = 'border-radius 1s';
+        event.target.style.transition = 'border-radius 1s';
     }
 })
 
 //Event 5..................
+//mousedown
 
 //Event 6..................
+//mouseup
 
 //Event 7..................
+//mousemove
+//selecting navbar
+const navbar = document.querySelector('.nav-container');
+//checking that I selected the correct element
+console.log(navbar);
+//changing the background color when a mouse moves over the nav
+navbar.addEventListener('mousemove', (event) => {
+    event.target.parentElement.style.backgroundColor = 'lightcyan';
+})
 
 //Event 8..................
+
+//scroll
 
 //Event 9..................
 
