@@ -56,7 +56,17 @@ topImg.addEventListener('dblclick', (event) => {
 })
 
 //Event 5..................
-//mousedown
+//keydown
+//selecting body
+const body = document.querySelector('body');
+//changing background color on body when key is pressed
+body.addEventListener('keydown', (event) => {
+    if (event.target.style.backgroundColor === 'paleturquoise') {
+        event.target.style.backgroundColor = 'white'
+    } else {
+        event.target.style.backgroundColor = 'paleturquoise';
+    }
+})
 
 //Event 6..................
 //mouseup
