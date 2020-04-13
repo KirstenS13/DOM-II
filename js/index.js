@@ -62,41 +62,75 @@ const body = document.querySelector('body');
 //changing background color on body when key is pressed
 body.addEventListener('keydown', (event) => {
     if (event.target.style.backgroundColor === 'paleturquoise') {
-        event.target.style.backgroundColor = 'white'
+        event.target.style.backgroundColor = 'azure'
+    } else if (event.target.style.backgroundColor === 'azure') {
+        event.target.style.backgroundColor = 'white';
     } else {
         event.target.style.backgroundColor = 'paleturquoise';
     }
 })
 
 //Event 6..................
-//mousemove
+//mouseover
 //selecting navbar
 const navbar = document.querySelector('.nav-container');
 //checking that I selected the correct element
 console.log(navbar);
 //changing the background color when a mouse moves over the nav
-navbar.addEventListener('mousemove', (event) => {
-    event.target.parentElement.style.backgroundColor = 'lightcyan';
+navbar.addEventListener('mouseover', (event) => {
+    event.target.style.color = 'seagreen';
+    event.target.style.textDecoration = 'underline';
 })
 
 //Event 7..................
-//mouseover
+//mouseout
+//change color back when mouse leaves nav
+navbar.addEventListener('mouseout', (event) => {
+    event.target.style.color = 'black';
+    event.target.style.textDecoration = 'none';
+})
+
+//Event 8..................
+//mouseup
 //selecting content sections
 const contentTexts = document.querySelectorAll('.text-content');
 //makeing sure correct elements were selected
 console.log(contentTexts);
+//rotate text when mouse up
 contentTexts.forEach((textEl) => {
-    textEl.addEventListener('mouseover', (event) => {
+    textEl.addEventListener('mouseup', (event) => {
         event.target.style.transform = 'rotate(360deg)';
         event.target.style.transition = 'transform 1s';
     })
 })
 
 
-//Event 8..................
-
-//
-
 //Event 9..................
+//mousedown
+const contentTitles = document.querySelectorAll('.text-content h2');
+//change text color when mouse down
+contentTitles.forEach((titleEl) => {
+    titleEl.addEventListener('mousedown', (event) => {
+        if (event.target.style.color === 'darkturquoise') {
+            event.target.style.color = 'mediumseagreen';
+        } else if (event.target.style.color === 'mediumseagreen') {
+            event.target.style.color = 'black';
+        } else {
+            event.target.style.color = 'darkturquoise';
+        }
+    })
+})
+//underline on mouseup and stop propagation
+contentTitles.forEach((titleEl) => {
+    titleEl.addEventListener('mouseup', (event) => {
+        event.stopPropagation();
+        if (event.target.style.textDecoration === 'underline') {
+            event.target.style.textDecoration = 'none';
+        } else {
+            event.target.style.textDecoration = 'underline';
+        }
+    })
+})
 
 //Event 10.................
+//
