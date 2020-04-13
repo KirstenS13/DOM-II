@@ -19,6 +19,8 @@ buttons.forEach((btnEl) => {
         event.target.style.transition = 'transform 1s';
     })
 })
+
+//Event 2..................
 //reduce buttons when mouse leaves
 buttons.forEach((btnEl) => {
     btnEl.addEventListener('mouseleave', (event) => {
@@ -26,17 +28,28 @@ buttons.forEach((btnEl) => {
     })
 })
 
-//Event 2..................
-
+//Event 3..................
+//change the text color of the parent element when button is clicked
 buttons.forEach((btnEl) => {
     btnEl.addEventListener('click', (event) => {
        event.target.parentElement.style.color = '#17A2B8';
     })
 })
 
-//Event 3..................
-
 //Event 4..................
+//selecting top image
+const topImg = document.querySelector('.intro img');
+//checking that correct element was selected
+console.log(topImg);
+//change border radius on img when dblclicked
+topImg.addEventListener('dblclick', (event) => {
+    if (event.target.style.borderRadius === '100px') {
+        event.target.style.borderRadius = '0px'
+    } else {
+        event.target.style.borderRadius = '100px';
+    event.target.style.transition = 'border-radius 1s';
+    }
+})
 
 //Event 5..................
 
